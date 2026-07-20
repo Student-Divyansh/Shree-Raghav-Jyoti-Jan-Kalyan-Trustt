@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मार्गदर्शक एवं पदाधिकारी | श्री राघव ज्योति जन कल्याण ट्रस्ट</title>
+    
+    <!-- Premium Icons Toolkit -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-orange: #ff9933;
+            --primary-glow: #ff5500;
+            --dark-slate: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #334155;
+            --text-muted: #64748b;
+            --pure-white: #ffffff;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR MODULE */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-block img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #0b132a;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-orange);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .btn-shivoham {
+            text-decoration: none;
+            color: var(--primary-orange);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .btn-primary-glow {
+            text-decoration: none;
+            background: linear-gradient(135deg, #ff9933, #ff5500);
+            color: var(--pure-white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(255, 153, 51, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(255, 153, 51, 0.5);
+        }
+
+        /* HERO HEADER */
+        .inner-hero {
+            background: linear-gradient(135deg, #090d16 0%, #0f1524 100%);
+            text-align: center;
+            padding: 150px 24px 100px 24px;
+            margin-top: 90px;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero-tag-glow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+            background: rgba(255, 153, 51, 0.06);
+            padding: 6px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 153, 51, 0.15);
+        }
+
+        .inner-hero h1 {
+            font-size: 3.2rem;
+            color: var(--pure-white);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-line {
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--primary-glow));
+            margin: 20px auto 0 auto;
+            border-radius: 10px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* SECTION HEADER COMPONENT */
+        .section-header-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-slate);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 5px solid var(--primary-orange);
+            padding-left: 15px;
+        }
+
+        /* CORE VALUES STYLING */
+        .values-section {
+            padding: 80px 0 40px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            border-radius: 24px;
+            padding: 35px 28px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.06);
+            border-color: rgba(255, 153, 51, 0.15);
+        }
+
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 153, 51, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            font-size: 1.4rem;
+            margin-bottom: 22px;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-slate);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* MAIN LEADERS SECTION */
+        .members-section {
+            padding: 60px 0 50px 0;
+        }
+
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .leader-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 30px 24px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(15, 23, 42, 0.08);
+            border-color: rgba(255, 153, 51, 0.2);
+        }
+
+        .leader-avatar-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .leader-avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-info h3 {
+            font-size: 1.4rem;
+            color: var(--dark-slate);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .leader-info .designation {
+            font-size: 0.9rem;
+            color: var(--primary-glow);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .leader-info .bio-para {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* CORE OFFICIALS & MEMBERS */
+        .officials-section {
+            padding: 50px 0 60px 0;
+        }
+
+        .simple-members-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .simple-member-row {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .simple-member-row:hover {
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.06);
+            transform: translateX(3px);
+        }
+
+        .member-icon-dot {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .simple-member-row:hover .member-icon-dot {
+            background: var(--primary-orange);
+            color: #ffffff;
+        }
+
+        .member-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-slate);
+        }
+
+        .member-role {
+            font-size: 0.88rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        
+        .member-role.normal-member {
+            color: var(--text-muted);
+        }
+
+        /* LEGAL & TRANSPARENCY STYLING */
+        .legal-section {
+            padding: 60px 0 100px 0;
+        }
+
+        .legal-transparency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .legal-card-box {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            border-radius: 24px;
+            padding: 32px 28px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-card-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-orange);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .legal-card-box:hover {
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+            transform: translateY(-4px);
+            border-color: rgba(255, 153, 51, 0.15);
+        }
+
+        .legal-card-box:hover::before {
+            opacity: 1;
+        }
+
+        .legal-icon {
+            width: 54px;
+            height: 54px;
+            background: var(--light-bg);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .legal-card-box:hover .legal-icon {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-glow));
+            color: #ffffff;
+        }
+
+        .legal-info-block h4 {
+            font-size: 1.2rem;
+            color: var(--dark-slate);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .legal-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-glow);
+            background: rgba(255, 85, 0, 0.05);
+            padding: 4px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            border: 1px dashed rgba(255, 85, 0, 0.15);
+        }
+
+        .legal-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 1024px) {
+            .navbar { padding: 15px 30px; }
+            .values-grid, .leaders-grid, .simple-members-grid, .legal-transparency-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions { display: none; }
+            .inner-hero h1 { font-size: 2.2rem; }
+            .section-header-title { font-size: 1.5rem; }
+            .values-grid, .leaders-grid, .simple-members-grid, .legal-transparency-grid { 
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-block">
+            <img src="img/logo.jpg" alt="श्री राघव ज्योति">
+            <div class="logo-text-wrapper">
+                <span class="logo-title">श्री राघव ज्योति</span>
+                <span class="logo-subtitle">जन कल्याण挂ट्रस्ट</span>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">मुख्य पृष्ठ</a></li>
+            <li><a href="about.html" class="active">हमारे बारे में</a></li>
+            <li><a href="work.html">कार्य व पहल</a></li>
+            <li><a href="gallery.html">गैलरी</a></li>
+            <li><a href="contact.html">सम्पर्क करें</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+            <a href="index.html" class="btn-shivoham">|| शिवोहम् ||</a>
+            <a href="donation.html" class="btn-primary-glow">सहयोग करें (Donate)</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="inner-hero">
+        <div class="inner-hero-content">
+            <span class="hero-tag-glow">परिचय एवं पहचान</span>
+            <h1>न्यास के मार्गदर्शक, सदस्य एवं वैधानिक स्थिति</h1>
+            <div class="hero-line"></div>
+        </div>
+    </header>
+
+    <!-- EXTRA SECTION: CORE VALUES -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-header-title"><i class="fa-solid fa-heart"></i> न्यास के मूल सिद्धांत</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>पूर्ण पारदर्शिता</h3>
+                    <p>न्यास में आने वाले प्रत्येक सहयोग और सामाजिक कार्यों के वित्तीय विवरण को पूरी शुचिता और पारदर्शिता के साथ व्यवस्थित रखा जाता है।</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>निःस्वार्थ सेवा</h3>
+                    <p>बिना किसी भेदभाव के समाज के अंतिम छोर पर खड़े व्यक्ति तक स्वास्थ्य, शिक्षा और मूलभूत सुविधाएं पहुंचाना ही हमारा परम ध्येय है।</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-gopuram"></i></div>
+                    <h3>संस्कृति संरक्षण</h3>
+                    <p>आधुनिक चेतना के साथ-साथ हमारी प्राचीन वैदिक परंपराओं, संस्कारों और धरोहरों को जीवित रखना और उनका संरक्षण करना।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LEADERS SECTION -->
+    <section class="members-section">
+        <div class="container">
+            
+            <h2 class="section-header-title"><i class="fa-solid fa-hands-praying"></i> मुख्य मार्गदर्शक एवं नेतृत्व</h2>
+            
+            <div class="leaders-grid">
+                <!-- Leader 1 -->
+                <div class="leader-card">
+                    <div class="leader-avatar-box">
+                        <!-- अपनी इमेज का नाम यहाँ बदलें -->
+                        <img src="img/maa.jfif" alt="मां विंध्याचल माता">
+                    </div>
+                    <div class="leader-info">
+                        <h3>मां विंध्याचल माता</h3>
+                        <p class="designation">मुख्य संरक्षक</p>
+                        <p class="bio-para">माँ विंध्याचल की असीम अनुकंपा और दिव्य प्रेरणा ही हमारे इस न्यास का सर्वोच्च आधार है। उनकी आध्यात्मिक चेतना संपूर्ण ट्रस्ट को जनकल्याण और धर्म के पथ पर निरंतर आगे बढ़ने का मार्ग प्रशस्त करती है।</p>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="leader-card">
+                    <div class="leader-avatar-box">
+                        <!-- अपनी इमेज का नाम यहाँ बदलें -->
+                        <img src="img/anuj.jpg" alt="आचार्य अनुज कुमार शुक्ल">
+                    </div>
+                    <div class="leader-info">
+                        <h3>आचार्य अनुज कुमार शुक्ल</h3>
+                        <p class="designation">संस्थापक व अध्यक्ष</p>
+                        <p class="bio-para">ट्रस्ट के मूल विज़न को धरातल पर क्रियान्वित करने वाले मुख्य सूत्रधार। आपके कुशल नेतृत्व में न्यास सामाजिक, सांस्कृतिक एवं जनहित के विभिन्न आयामों को समाज के अंतिम व्यक्ति तक पहुँचाने के लिए प्रतिबद्ध है।</p>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="leader-card">
+                    <div class="leader-avatar-box">
+                        <!-- अपनी इमेज का नाम यहाँ बदलें -->
+                        <img src="img/baalkrishna.jpg" alt="आचार्य बालकृष्ण शुक्ल">
+                    </div>
+                    <div class="leader-info">
+                        <h3>आचार्य बालकृष्ण शुक्ल</h3>
+                        <p class="designation">उपाध्यक्ष</p>
+                        <p class="bio-para">न्यास के समस्त संगठनात्मक कार्यों और रणनीतियों में आपकी सक्रिय और महत्वपूर्ण भूमिका है। आपका मार्गदर्शन ट्रस्ट की सभी कल्याणकारी योजनाओं को सुचारू और अनुशासित रूप से संचालित करने में सहायक होता है।</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OFFICIALS & RESPECTED MEMBERS GRID -->
+    <section class="officials-section">
+        <div class="container">
+            
+            <h2 class="section-header-title"><i class="fa-solid fa-users"></i> पदाधिकारी एवं प्रबंध कार्यकारिणी</h2>
+            
+            <div class="simple-members-grid">
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्रीमती सरोजा देवी</span>
+                        <span class="member-role">कोषाध्यक्ष</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-user-check"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री धीरज सिंह</span>
+                        <span class="member-role">विशेष सचिव</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-user-pen"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री विकास दुबे (नेता जी)</span>
+                        <span class="member-role">सचिव</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HONORED MEMBERS SUBSECTION -->
+            <h2 class="section-header-title" style="margin-top: 60px;"><i class="fa-solid fa-award"></i> सम्मानित सदस्य गण</h2>
+            
+            <div class="simple-members-grid">
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री प्रवीण कुमार मिश्रा</span>
+                        <span class="member-role normal-member">सदस्य (समाज सेवी)</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री पिंकल पांडेय</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री विपिन दुबे</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री मनोज सिंह</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्रीमती सोनी सिंह</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री संदीप सिंह</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्रीमती संध्या सिंह</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+
+                <div class="simple-member-row">
+                    <div class="member-icon-dot"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="member-details">
+                        <span class="member-name">श्री चन्दन मिश्रा</span>
+                        <span class="member-role normal-member">सदस्य</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LEGAL & TRANSPARENCY SECTION -->
+    <section class="legal-section">
+        <div class="container">
+            <h2 class="section-header-title"><i class="fa-solid fa-scale-balanced"></i> वैधानिक स्थिति एवं पारदर्शिता</h2>
+            
+            <div class="legal-transparency-grid">
+                <div class="legal-card-box">
+                    <div class="legal-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="legal-info-block">
+                        <h4>न्यास पंजीकरण संख्या</h4>
+                        <p class="legal-value">पंजीकरण संख्या यहाँ लिखें</p>
+                        <p class="legal-desc">भारतीय ट्रस्ट अधिनियम के तहत राज्य सरकार द्वारा आधिकारिक रूप से पंजीकृत एवं मान्यता प्राप्त।</p>
+                    </div>
+                </div>
+
+                <div class="legal-card-box">
+                    <div class="legal-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="legal-info-block">
+                        <h4>स्थायी खाता संख्या (PAN)</h4>
+                        <p class="legal-value">PAN संख्या यहाँ लिखें</p>
+                        <p class="legal-desc">आयकर विभाग, भारत सरकार द्वारा न्यास के नाम पर जारी आधिकारिक वित्तीय पहचान पत्र।</p>
+                    </div>
+                </div>
+
+                <div class="legal-card-box">
+                    <div class="legal-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <div class="legal-info-block">
+                        <h4>12A & 80G अनुपालन</h4>
+                        <p class="legal-value">स्वीकृत / प्रक्रिया में</p>
+                        <p class="legal-desc">आयकर अधिनियम के तहत डोनर्स को मिलने वाली टैक्स छूट और ट्रस्ट की वित्तीय शुचिता का प्रमाण।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

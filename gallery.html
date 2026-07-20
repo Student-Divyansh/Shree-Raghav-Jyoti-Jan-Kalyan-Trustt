@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गैलरी | श्री राघव ज्योति जन कल्याण ट्रस्ट</title>
+    
+    <!-- Premium Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-orange: #ff9933;
+            --primary-glow: #ff5500;
+            --dark-slate: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #334155;
+            --pure-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: hidden; }
+
+        /* NAVBAR (Wahi jo baaki pages pe hai) */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; z-index: 1000; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+        .nav-logo-block { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo-block img { height: 50px; width: auto; }
+        .logo-title { font-size: 1.2rem; font-weight: 800; color: #0b132a; }
+        .logo-subtitle { font-size: 0.75rem; font-weight: 700; color: var(--primary-orange); letter-spacing: 1.5px; }
+
+        .nav-menu-desktop { display: flex; list-style: none; gap: 30px; }
+        .nav-menu-desktop a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+        .nav-menu-desktop a.active { color: var(--primary-orange); }
+
+        .nav-actions { display: flex; align-items: center; gap: 20px; }
+        .btn-primary-glow { text-decoration: none; background: linear-gradient(135deg, #ff9933, #ff5500); color: #ffffff; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+        
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* Mobile Menu */
+        .mobile-menu-wrapper { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #ffffff; flex-direction: column; padding: 20px; gap: 20px; text-align: center; border-bottom: 3px solid var(--primary-orange); box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu-wrapper.active { display: flex; }
+
+        /* Gallery Page Styles */
+        .gallery-container { padding: 120px 24px 80px; max-width: 1200px; margin: 0 auto; }
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header h1 { font-size: 2.8rem; color: var(--dark-slate); margin-bottom: 10px; }
+        
+        .video-section { margin-bottom: 80px; }
+        .video-frame { width: 100%; height: 500px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .photo-item { height: 300px; border-radius: 20px; overflow: hidden; transition: 0.4s; }
+        .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .photo-item:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.15); }
+        .photo-item:hover img { transform: scale(1.05); }
+
+        @media (max-width: 992px) {
+            .navbar { padding: 0 30px; }
+            .nav-menu-desktop, .nav-actions { display: none; }
+            .hamburger { display: block; }
+            .video-frame { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-logo-block">
+        <img src="img/logo.jpg" alt="Logo">
+        <div>
+            <span class="logo-title">श्री राघव ज्योति</span>
+            <span class="logo-subtitle">जन कल्याण ट्रस्ट</span>
+        </div>
+    </a>
+    <ul class="nav-menu-desktop">
+        <li><a href="index.html">मुख्य पृष्ठ</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="work.html">कार्य व पहल</a></li>
+        <li><a href="gallery.html" class="active">गैलरी</a></li>
+        <li><a href="contact.html">सम्पर्क करें</a></li>
+    </ul>
+    <div class="nav-actions">
+        <a href="index.html#donate" class="btn-primary-glow">सहयोग करें (Donate)</a>
+    </div>
+    <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+</nav>
+
+<div class="mobile-menu-wrapper" id="mobile-menu">
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
+        <li><a href="index.html">मुख्य पृष्ठ</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="work.html">कार्य व पहल</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+    </ul>
+</div>
+
+<main class="gallery-container">
+    <div class="page-header">
+        <h1>हमारी सेवा यात्रा</h1>
+        <p>ट्रस्ट द्वारा किए गए कार्यों की एक झलक</p>
+    </div>
+
+    <!-- Video Area -->
+    <section class="video-section">
+        <div class="video-frame">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Photo Area -->
+    <section class="photo-grid">
+        <div class="photo-item"><img src="img/1.jpg" alt="Gallery"></div>
+        <div class="photo-item"><img src="img/2.jpg" alt="Gallery"></div>
+        <div class="photo-item"><img src="img/3.jpg" alt="Gallery"></div>
+        <div class="photo-item"><img src="img/4.jpg" alt="Gallery"></div>
+        <div class="photo-item"><img src="img/5.jpg" alt="Gallery"></div>
+        <div class="photo-item"><img src="img/6.jpg" alt="Gallery"></div>
+    </section>
+</main>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        hamburger.querySelector('i').classList.toggle('fa-bars');
+        hamburger.querySelector('i').classList.toggle('fa-xmark');
+    });
+</script>
+
+</body>
+</html>

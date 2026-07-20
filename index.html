@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Raghav Jyoti Jankalyan Trust</title>
+    
+    <!-- Premium Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Library for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External Styling Sheet Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header / Navigation Bar Start -->
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo & Brand Info -->
+        <div class="nav-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <img src="img/logo.jpg" alt="Trust Logo" class="logo-img">
+            <div class="brand-text">
+                <span class="brand-title">श्री राघव ज्योति</span>
+                <span class="brand-subtitle">जनकल्याण延 ट्रस्ट</span>
+            </div>
+        </div>
+
+        <!-- Desktop Links (JavaScript handles the active class automatically) -->
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">मुख्य पृष्ठ</a>
+            <a href="about.html" class="nav-link">हमारे बारे में</a>
+            <a href="work.html" class="nav-link">कार्य व पहल</a>
+            <a href="gallery.html" class="nav-link">गैलरी</a>
+            <a href="contact.html" class="nav-link">संपर्क करें</a>
+        </div>
+
+        <!-- Side Action Button -->
+        <div class="nav-actions">
+            <span class="tagline-text">|| शिवोहम् ||</span>
+            <a href="donation.html" class="btn btn-primary animate-pulse">सहयोग करें (Donate)</a>
+        </div>
+
+        <!-- Hamburger Button for Mobile Drawer -->
+        <button class="hamburger-btn" id="menuBtn" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">मुख्य पृष्ठ</a>
+        <a href="about.html" class="mobile-link">हमारे बारे में</a>
+        <a href="work.html" class="mobile-link">कार्य व पहल</a>
+        <a href="gallery.html" class="mobile-link">गैलरी</a>
+        <a href="contact.html" class="mobile-link">संपर्क करें</a>
+        <div class="mobile-actions">
+            <span class="tagline-text">|| शिवोहम् ||</span>
+            <a href="donation.html" class="btn btn-primary w-full text-center">सहयोग करें (Donate)</a>
+        </div>
+    </div>
+</nav>
+<!-- Header / Navigation Bar End -->
+
+    <!-- Hero / Main Banner Section start -->
+<section id="home" class="hero-section">
+    <div class="hero-container">
+        <!-- Left Side: Premium Typography Content -->
+        <div class="hero-content">
+            <span class="hero-tagline"><i class="fa-solid fa-om"></i> जनकल्याणाय समर्पित</span>
+            <h1 class="hero-title">
+                मानव सेवा ही <br>
+                <span class="highlight-text">सर्वोपरि धर्म</span> है।
+            </h1>
+            <p class="hero-description">
+                श्री राघव ज्योति जनकल्याण ट्रस्ट समाज के वंचित, असहाय और जरूरतमंद वर्गों के उत्थान के लिए निरंतर कार्यरत है। शिक्षा, स्वास्थ्य और सामाजिक चेतना के माध्यम से एक सशक्त समाज का निर्माण ही हमारा परम लक्ष्य है।
+            </p>
+            <div class="hero-buttons">
+                <a href="#initiatives" class="btn btn-primary"><i class="fa-solid fa-hands-holding-child"></i> हमारे कार्य देखें</a>
+                <a href="#about" class="btn btn-secondary">अधिक जानें <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Trust Stats Badge -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">सक्रिय प्रोजेक्ट्स</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5K+</span>
+                    <span class="stat-label">सहायता प्राप्त परिवार</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Cinematic Image Slider -->
+        <div class="hero-visual">
+            <div class="slider-wrapper">
+                <!-- Image 1 -->
+                <div class="slide active">
+                    <img src="img/1.jpg" alt="Social Service">
+                    <div class="slide-overlay"></div>
+                </div>
+                <!-- Image 2 -->
+                <div class="slide">
+                    <img src="img/a1.jpg" alt="Child Education">
+                    <div class="slide-overlay"></div>
+                </div>
+                <!-- Image 3 -->
+                <div class="slide">
+                    <img src="img/a2.jpg" alt="Community Support">
+                    <div class="slide-overlay"></div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <button class="slide-arrow prev-arrow" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slide-arrow next-arrow" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero / Main Banner Section end -->
+
+<!-- Founder / Sansthapak Section -->
+<section id="founder" class="founder-section">
+    <div class="founder-container">
+        <!-- Left Side: Founder Image Profile Frame -->
+        <div class="founder-visual">
+            <div class="founder-image-wrapper">
+                <!-- Yahan Anuj Kumar Shukla ji ki image ka path aayega (e.g., founder.jpg) -->
+                <img src="img/anuj2.jpeg" alt="श्री अनुज कुमार शुक्ला - संस्थापक" class="founder-img">
+                <div class="founder-title-badge">
+                    <span class="badge-role">संस्थापक</span>
+                    <span class="badge-name">श्री अनुज कुमार शुक्ला</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Founder Profile Content -->
+        <div class="founder-content">
+            <span class="section-tag"><i class="fa-solid fa-gopuram"></i> प्रेरणा स्रोत</span>
+            <h2 class="section-heading">हमारे संस्थापक</h2>
+            <div class="heading-underline"></div>
+            
+            <p class="founder-intro-lead">
+                <strong>श्री राघव ज्योति जनकल्याण ट्रस्ट</strong> की स्थापना दिनांक <span class="highlight-date">20 जून 2024</span> को <strong>श्री अनुज कुमार शुक्ला जी</strong> के कर-कमलों द्वारा की गई। यह ट्रस्ट समाज के कमजोर और वंचित वर्गों के कल्याण हेतु समर्पित एक निःस्वार्थ और पवित्र प्रयास है।
+            </p>
+            
+            <div class="founder-quote-box">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>जब तक समाज के अंतिम व्यक्ति तक सेवा नहीं पहुंचती, तब तक कल्याण अधूरा है।</p>
+            </div>
+
+            <p class="founder-desc-text">
+                इस ट्रस्ट की नींव सेवा, करुणा, और मानवीय मूल्यों पर आधारित है। श्री अनुज कुमार शुक्ला जी ने यह संस्था समाज में शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, वृद्धजन सेवा, एवं निर्धनों की सहायता जैसे महत्वपूर्ण क्षेत्रों में सकारात्मक बदलाव लाने के उद्देश्य से प्रारंभ की।
+            </p>
+            
+            <p class="founder-desc-text">
+                20 जून 2024, इस संस्था के लिए केवल एक तारीख नहीं, बल्कि एक नया संकल्प है — समाज को एक बेहतर दिशा देने का। उनके सुदृढ़ नेतृत्व और मार्गदर्शन में ट्रस्ट निरंतर नई ऊँचाइयों की ओर अग्रसर है।
+            </p>
+
+            <div class="signature-area">
+                <div class="sig-line"></div>
+                <span class="sig-name">अनुज कुमार शुक्ला</span>
+                <span class="sig-title">संस्थापक एवं मार्गदर्शक</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Founder / Sansthapak Section End -->
+
+<!-- Premium News & Event Section START -->
+<section class="premium-event-section">
+    <div class="premium-container">
+        <!-- Text Header -->
+        <div class="event-header">
+            <span class="event-tag">मीडिया गैलरी</span>
+            <h2 class="event-title">जनेश्वर मिश्र पार्क बैठक: एक विस्तृत झलक</h2>
+            <div class="event-underline"></div>
+            <p class="event-desc">
+                संस्था के विस्तार के लिए अध्यक्ष जी के नेतृत्व में लखनऊ के जनेश्वर मिश्र पार्क में आयोजित इस महत्वपूर्ण बैठक में समाज की कई गणमान्य हस्तियां शामिल हुईं। संस्था के भविष्य के संकल्पों और जन-कल्याण कार्यों को नई दिशा देने के लिए यह एक सार्थक संवाद रहा।
+            </p>
+        </div>
+
+        <!-- Premium Grid Layout -->
+        <div class="premium-grid">
+            <!-- Vertical Video (Reel Ratio) -->
+            <div class="grid-item video-item">
+                <video autoplay muted poster="img/video-thumb.jpg">
+                    <source src="vid/news video.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- 4 Photos -->
+            <div class="grid-item"><img src="img/news1.jpeg" alt="Meeting Photo"></div>
+            <div class="grid-item"><img src="img/news2.jpeg" alt="Meeting Photo"></div>
+            <div class="grid-item"><img src="img/news3.jpeg" alt="Meeting Photo"></div>
+            <div class="grid-item"><img src="img/news5.jpeg" alt="Meeting Photo"></div>
+        </div>
+    </div>
+</section>
+<!-- Premium News & Event Section END -->
+
+<!-- ABOUT SECTION START -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        <!-- Left Side: Visual Grid & Features -->
+        <div class="about-visual-grid">
+            <div class="grid-card main-img-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800" alt="Trust Social Work">
+            </div>
+            <div class="grid-card feature-card mission-box">
+                <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>हमारा उद्देश्य</h3>
+                <p>समाज के हर पिछड़े वर्ग तक बुनियादी सुविधाएं पहुंचाना।</p>
+            </div>
+            <div class="grid-card feature-card vision-box">
+                <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>हमारा संकल्प</h3>
+                <p>शिक्षा, स्वास्थ्य और आत्मनिर्भरता से सशक्त राष्ट्र का निर्माण।</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Textual Narrative -->
+        <div class="about-content">
+            <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> एक परिचय</span>
+            <h2 class="section-heading">संस्था के बारे में</h2>
+            <div class="heading-underline"></div>
+            
+            <p class="about-text-lead">
+                श्री राघव ज्योति जनकल्याण ट्रस्ट एक गैर-लाभकारी संस्था (NGO) है, जो समाज के अंतिम पायदान पर खड़े व्यक्ति की उन्नति के लिए संकल्पित है।
+            </p>
+            <p class="about-text-body">
+                हमारा विश्वास है कि वास्तविक सामाजिक बदलाव तब तक संभव नहीं है, जब तक हर बच्चे को सही शिक्षा और हर बीमार को उचित चिकित्सा न मिले। हमारी टीम ग्रामीण और अर्ध-शहरी क्षेत्रों में जमीनी स्तर पर जाकर स्वास्थ्य शिविर, निशुल्क शिक्षा केंद्र और महिला स्वरोजगार कार्यक्रमों का संचालन करती है।
+            </p>
+
+            <!-- Key Pillars List -->
+            <ul class="pillars-list">
+                <li>
+                    <div class="pillar-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="pillar-info"><strong>पारदर्शिता:</strong> हर सहयोग और दान का पूर्ण विवरण।</div>
+                </li>
+                <li>
+                    <div class="pillar-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="pillar-info"><strong>निःस्वार्थ सेवा:</strong> बिना किसी भेदभाव के मानवता की भलाई।</div>
+                </li>
+            </ul>
+
+            <div class="about-action">
+                <a href="#contact" class="btn btn-secondary">हमसे जुड़ें <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ABOUT SECTION END -->
+
+<!-- Services Section START -->
+<section id="initiatives" class="services-section">
+    <div class="services-container">
+        <!-- Section Header for SEO Optimization -->
+        <div class="services-header">
+            <span class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i> हमारे सेवा कार्य</span>
+            <h2 class="section-heading">श्री राघव ज्योति जनकल्याण ट्रस्ट द्वारा किए जा रहे मुख्य कार्य</h2>
+            <div class="heading-underline"></div>
+            <p class="section-subtitle">मानव सेवा और सामाजिक उत्थान के लिए हमारे द्वारा संचालित निरंतर जमीनी प्रयास</p>
+        </div>
+
+        <!-- Services Grid With Media Content -->
+        <div class="services-grid">
+            
+            <!-- Service Card 1: Water Supply -->
+            <article class="service-card">
+                <div class="service-image">
+                    <!-- Clean SEO Alt Tag Implemented -->
+                    <img src="img/water.jpg" alt="Gramin Jal Vitran Seva - Shree Raghav Jyoti Jankalyan Trust">
+                    <span class="service-badge"><i class="fa-solid fa-clock"></i> दैनिक सेवा</span>
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon-title">
+                        <div class="service-mini-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                        <h3 class="service-title">ग्राम जल वितरण सेवा</h3>
+                    </div>
+                    <p class="service-text">
+                        गर्मी के मौसम में जल संकट की समस्या को ध्यान में रखते हुए <strong>श्री राघव ज्योति जनकल्याण ट्रस्ट</strong> द्वारा कई ग्रामीण क्षेत्रों में नि:शुल्क पीने के पानी का वितरण किया जा रहा है। यह सेवा प्रतिदिन की जाती है, जिससे सैकड़ों लोगों को राहत मिल रही है।
+                    </p>
+                </div>
+            </article>
+
+            <!-- Service Card 2: Food Distribution -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="img/a2.jpg" alt="Bhojan Vitran NGO Service - Shree Raghav Jyoti Jankalyan Trust">
+                    <span class="service-badge"><i class="fa-solid fa-utensils"></i> पौष्टिक आहार</span>
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon-title">
+                        <div class="service-mini-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                        <h3 class="service-title">जरूरतमंदों को भोजन वितरण</h3>
+                    </div>
+                    <p class="service-text">
+                        ट्रस्ट द्वारा रोज़ाना असहाय, निर्धन एवं बेसहारा लोगों को ताज़ा व पौष्टिक भोजन प्रदान किया जा रहा है। <strong>श्री राघव ज्योति जनकल्याण ट्रस्ट</strong> की यह सेवा मुख्य रूप से उन इलाकों में दी जाती है जहाँ भूखमरी की समस्या गंभीर है।
+                    </p>
+                </div>
+            </article>
+
+            <!-- Service Card 3: Sharbat Service -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="img/2.jpg" alt="Mandir Sharbat Seva - Shree Raghav Jyoti Jankalyan Trust">
+                    <span class="service-badge"><i class="fa-solid fa-gopuram"></i> श्रद्धालु सेवा</span>
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon-title">
+                        <div class="service-mini-icon"><i class="fa-solid fa-glass-water"></i></div>
+                        <h3 class="service-title">मंदिरों में शरबत सेवा</h3>
+                    </div>
+                    <p class="service-text">
+                        भीषण गर्मी में श्रद्धालुओं को राहत देने के लिए <strong>श्री राघव ज्योति जनकल्याण ट्रस्ट</strong> ने मंदिर परिसरों में ठंडे शरबत का वितरण शुरू किया है। यह सेवा दोपहर के समय दी जाती, जब लोग पूजा-पाठ के बाद शीतल जल की तलाश में होते हैं।
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+<!-- Services Section END -->
+
+<!-- Environment START -->
+<section id="campaign-leaders" class="campaign-section">
+    <div class="campaign-container">
+        <!-- SEO Optimized Section Header -->
+        <div class="campaign-header">
+            <span class="section-tag"><i class="fa-solid fa-seedling"></i> पर्यावरण संरक्षण</span>
+            <h2 class="section-heading">सरकार की मंशा के अनुसार निरंतर कार्य</h2>
+            <div class="heading-underline"></div>
+            <p class="section-subtitle">"एक पेड़ माँ के नाम" अभियान के अंतर्गत संस्था के मार्गदर्शक के रूप में माननीय गणों के प्रेरणादयी संदेश</p>
+        </div>
+
+        <!-- Leaders Grid Layout -->
+        <div class="leaders-grid">
+
+            <!-- Leader 1: PM Narendra Modi -->
+            <article class="leader-card priority-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-1.jpg" alt="नरेंद्र दामोदरदास मोदी - प्रधानमंत्री भारत - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">भारत के प्रधान मंत्री</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">नरेंद्र दामोदरदास Modi</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            आज विश्व पर्यावरण दिवस पर, मैं <strong>एक पेड़ माँ के नाम</strong> अभियान की शुरुआत करता हूँ। मैं सभी से आग्रह करता हूँ कि अपनी माँ के नाम पर एक पेड़ लगाएं और <span>#Plant4Mother</span> या <span>#एक_पेड़_माँ_के_नाम</span> का उपयोग करके तस्वीर साझा करें।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leader 2: Amit Shah -->
+            <article class="leader-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-2.jpg" alt="अमित शाह - केंद्रीय गृह मंत्री - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">केंद्रीय गृह व सहकारिता मंत्री</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">अमित शाह</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            आइए हम सब मिलकर <strong>एक पेड़ माँ के नाम</strong> अभियान को सफल बनाएं। अपनी माँ के नाम पर एक पेड़ लगाकर पर्यावरण संरक्षण में योगदान दें और इस पवित्र कार्य में भागीदार बनें।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leader 3: Nitin Gadkari -->
+            <article class="leader-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-3.jpg" alt="नितिन गडकरी - केंद्रीय मंत्री - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">राष्ट्रीय राजमार्ग व सड़क परिवहन मंत्री</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">नितिन गडकरी</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            मैं सभी देशवासियों से आग्रह करता हूँ कि <strong>एक पेड़ माँ के नाम</strong> अभियान में शामिल हों और अपनी माँ के नाम पर एक पेड़ लगाकर पर्यावरण और संस्कृति का संरक्षण करें।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leader 4: Yogi Adityanath -->
+            <article class="leader-card priority-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-4.jpg" alt="योगी आदित्यनाथ - मुख्यमंत्री उत्तर प्रदेश - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">उत्तर प्रदेश के मुख्यमंत्री</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">योगी आदित्यनाथ</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            पर्यावरण संरक्षण के लिए <strong>एक पेड़ माँ के नाम</strong> अभियान बहुत महत्वपूर्ण है। मैं सभी से आग्रह करता हूँ कि इस अभियान में शामिल होकर अपनी माँ के नाम पर पेड़ लगाएं।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leader 5: Keshav Prasad Maurya -->
+            <article class="leader-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-5.jpg" alt="केशव प्रसाद मौर्य - उपमुख्यमंत्री - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">उत्तर प्रदेश के उपमुख्यमंत्री</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">केशव प्रसाद मौर्य</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            मैं <strong>एक पेड़ माँ के नाम</strong> अभियान की सराहना करता हूँ। यह अभियान न केवल पर्यावरण संरक्षण में मदद करेगा, बल्कि माँ के प्रति सम्मान भी बढ़ाएगा। सभी से इसमें शामिल होने का आग्रह करता हूँ।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leader 6: Brajesh Pathak -->
+            <article class="leader-card">
+                <div class="leader-image-zone">
+                    <img src="img/pedd-6.jpg" alt="ब्रजेश पाठक - विधायक - श्री राघव ज्योति जनकल्याण ट्रस्ट">
+                    <div class="leader-badge">उत्तर प्रदेश विधान सभा के सदस्य</div>
+                </div>
+                <div class="leader-details">
+                    <h3 class="leader-name">ब्रजेश पाठक</h3>
+                    <div class="trust-tag">श्री राघव ज्योति जनकल्याण ट्रस्ट</div>
+                    <div class="quote-container">
+                        <i class="fa-solid fa-quote-left quote-mark"></i>
+                        <p class="leader-quote">
+                            माँ के सम्मान में पेड़ लगाना एक पवित्र कार्य है। <strong>एक पेड़ माँ के नाम</strong> अभियान के माध्यम से हम पर्यावरण संरक्षण और मातृभक्ति का संदेश फैला सकते हैं। इसमें सभी को शामिल होना चाहिए।
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+<!-- Environment END -->
+
+<!-- Cow Welfare Section START -->
+<section id="gau-seva" class="gau-section">
+    <div class="gau-container">
+        <!-- Left Side: Video Player -->
+        <div class="gau-visual">
+            <div class="gau-video-box">
+                <video poster="img/video-thumbnail.jpg" muted autoplay>
+                    <source src="vid/cow.mp4" type="video/mp4">
+                    आपका ब्राउज़र वीडियो को सपोर्ट नहीं करता है।
+                </video>
+                <div class="gau-floating-card">
+                    <i class="fa-solid fa-heart-pulse animated-pulse"></i>
+                    <span>गौ सेवा मानवता की सेवा है</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="gau-content">
+            <span class="section-tag"><i class="fa-solid fa-cow"></i> परम कर्तव्य</span>
+            <h2 class="section-heading">गौ सेवा में श्री राघव ज्योति जनकल्याण ट्रस्ट का योगदान</h2>
+            <div class="heading-underline"></div>
+            
+            <p class="gau-lead-text">
+                <strong>श्री राघव ज्योति जनकल्याण ट्रस्ट</strong> गौमाता की सेवा को अपना परम कर्तव्य मानता है। सेवा के माध्यम से समाज परिवर्तन के संकल्प को पूरा करने के लिए ट्रस्ट निरंतर प्रयासरत है।
+            </p>
+            
+            <p class="gau-body-text">
+                ट्रस्ट द्वारा संचालित गौशालाओं में गौवंश की देखभाल, भोजन, चिकित्सा एवं स्वच्छता का विशेष ध्यान रखा जाता है। बीमार, बेसहारा और वृद्ध गायों को यहाँ स्नेह, सुरक्षा और पूर्ण सेवा प्रदान की जाती है।
+            </p>
+
+            <div class="gau-slogans-grid">
+                <div class="slogan-item">
+                    <div class="slogan-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="slogan-info"><strong>सच्ची सेवा:</strong> गौ सेवा ही सच्ची सेवा है।</div>
+                </div>
+                <div class="slogan-item">
+                    <div class="slogan-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="slogan-info"><strong>पुण्य लाभ:</strong> गौ सेवा करें, पुण्य कमाएं।</div>
+                </div>
+                <div class="slogan-item">
+                    <div class="slogan-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="slogan-info"><strong>सकारात्मक प्रभाव:</strong> गौ सेवा से पर्यावरण और समाज को लाभ।</div>
+                </div>
+            </div>
+
+            <div class="gau-cta-box">
+                <p>आप भी इस पुण्य कार्य में भागीदार बनें। आपका छोटा सा योगदान भी किसी गौमाता के जीवन को संवार सकता है।</p>
+                <a href="donation.html" class="btn btn-primary">योगदान दें <i class="fa-solid fa-hand-holding-heart"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cow Welfare Section END -->
+
+<!-- Team Members Section START -->
+<section id="our-team" class="team-section">
+    <div class="team-container">
+        
+        <!-- Section Header -->
+        <div class="team-header">
+            <span class="team-tag"><i class="fa-solid fa-users-gear"></i> ट्रस्ट परिवार</span>
+            <h2 class="team-heading">हमारे कर्मवीर – जो बना रहे हैं बदलाव की मिसाल</h2>
+            <div class="heading-underline"></div>
+        </div>
+
+        <!-- Tier 1: Supreme Blessing (Mukhya Sangrakshak) -->
+        <div class="supreme-tier">
+            <div class="team-card supreme-card">
+                <div class="card-image-wrapper">
+                    <!-- Yahan Maa Vindhyachal ki premium photo lagana -->
+                    <img src="img/maa.jfif" alt="मां विंध्याचल माता - मुख्य संरक्षक" class="team-img">
+                    <div class="blessing-glow"></div>
+                </div>
+                <div class="card-info">
+                    <h3>मां विंध्याचल माता</h3>
+                    <p class="role text-gradient">मुख्य संरक्षक</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier 2: Core Executive Pillars -->
+        <div class="executive-tier">
+            <!-- Founder & President -->
+            <div class="team-card exec-card">
+                <div class="card-image-wrapper">
+                    <img src="img/anuj.jpg" alt="आचार्य अनुज कुमार शुक्ल" class="team-img">
+                </div>
+                <div class="card-info">
+                    <h3>आचार्य अनुज कुमार शुक्ल</h3>
+                    <p class="role">संस्थापक व अध्यक्ष</p>
+                </div>
+            </div>
+
+            <!-- Vice President -->
+            <div class="team-card exec-card">
+                <div class="card-image-wrapper">
+                    <img src="img/baalkrishna.jpg" alt="आचार्य बालकृष्ण शुक्ल" class="team-img">
+                </div>
+                <div class="card-info">
+                    <h3>आचार्य बालकृष्ण शुक्ल</h3>
+                    <p class="role">उपाध्यक्ष</p>
+                </div>
+            </div>
+
+            <!-- Treasurer -->
+            <div class="team-card exec-card">
+                <div class="card-image-wrapper">
+                    <img src="img/saroja devi.jpg" alt="श्रीमती सरोजा देवी" class="team-img">
+                </div>
+                <div class="card-info">
+                    <h3>श्रीमती सरोजा देवी</h3>
+                    <p class="role">कोषाध्यक्ष</p>
+                </div>
+            </div>
+
+            <!-- Special Secretary -->
+            <div class="team-card exec-card">
+                <div class="card-image-wrapper">
+                    <img src="img/dheeraj.jpg" alt="श्री धीरज सिंह" class="team-img">
+                </div>
+                <div class="card-info">
+                    <h3>श्री धीरज सिंह</h3>
+                    <p class="role">विशेष सचिव</p>
+                </div>
+            </div>
+
+            <!-- Secretary -->
+            <div class="team-card exec-card">
+                <div class="card-image-wrapper">
+                    <img src="img/vikas dubey.jpg" alt="श्री विकास दुबे (नेता जी)" class="team-img">
+                </div>
+                <div class="card-info">
+                    <h3>श्री विकास दुबे (नेता जी)</h3>
+                    <p class="role">सचिव</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier 3: Dedicated Members Grid (Karmveer Grid) -->
+        <div class="members-grid-title">सम्मानित सदस्य गण</div>
+        <div class="members-grid-tier">
+            
+            <!-- Member 1 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/praveen.jpg" alt="श्री प्रवीण कुमार मिश्रा" class="team-img">
+                </div>
+                <h4>श्री प्रवीण कुमार मिश्रा</h4>
+                <p>सदस्य (समाज सेवी)</p>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/pinkle.jpg" alt="श्री पिंकल पांडेय" class="team-img">
+                </div>
+                <h4>श्री पिंकल पांडेय</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/vipin dubey.jpg" alt="श्री विपिन दुबे" class="team-img">
+                </div>
+                <h4>श्री विपिन दुबे</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/manoj singh.jpg" alt="श्री मनोज सिंह" class="team-img">
+                </div>
+                <h4>श्री मनोज सिंह</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/sony singh.jpg" alt="श्रीमती सोनी सिंह" class="team-img">
+                </div>
+                <h4>श्रीमती सोनी सिंह</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 6 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/sandeep singh.jpg" alt="श्री संदीप सिंह" class="team-img">
+                </div>
+                <h4>श्री संदीप सिंह</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 7 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/sandhya singh.jpg" alt="श्रीमती संध्या सिंह" class="team-img">
+                </div>
+                <h4>श्रीमती संध्या सिंह</h4>
+                <p>सदस्य</p>
+            </div>
+
+            <!-- Member 8 -->
+            <div class="member-mini-card">
+                <div class="mini-img-wrapper">
+                    <img src="img/chandan.jpg" alt="श्री चन्दन मिश्रा" class="team-img">
+                </div>
+                <h4>श्री चन्दन मिश्रा</h4>
+                <p>सदस्य</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Team Members Section END -->
+
+
+
+
+
+
+    <!-- External Interactivity JavaScript Sheet -->
+    <script src="script.js"></script>
+</body>
+</html>
