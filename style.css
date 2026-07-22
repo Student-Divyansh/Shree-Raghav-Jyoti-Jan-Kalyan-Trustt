@@ -923,162 +923,250 @@ body {
 }
 /* ABOUT SECTION END */
 
-/* SERVICES SECTION STYLES START*/
+/* SERVICES SECTION STYLES START */
 .services-section {
-    padding: 100px 0;
-    background-color: #fffaf5;
+    padding: 120px 0;
+    background: #0f172a; /* Deep Modern Slate Theme */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient Background Glow */
+.services-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 153, 51, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .services-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .services-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.services-header .heading-underline {
-    margin: 15px auto;
+/* Custom Tag */
+.services-header .section-tag {
+    background: rgba(255, 153, 51, 0.12);
+    color: #ff9933;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 153, 51, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.services-header .section-heading {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    max-width: 800px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.heading-glow-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9933, #e67e22);
+    border-radius: 2px;
+    margin: 10px auto 20px auto;
+    box-shadow: 0 0 15px rgba(255, 153, 51, 0.5);
 }
 
 .section-subtitle {
-    font-size: 1.05rem;
-    color: #7f8c8d;
+    font-size: 1.1rem;
+    color: #94a3b8;
     max-width: 600px;
-    margin-top: 5px;
+    line-height: 1.6;
 }
 
-/* New Image-Based Grid Layout */
+/* Modern Grid Layout */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
+/* Premium Card Design */
 .service-card {
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(255, 153, 51, 0.06);
-    transition: var(--transition-smooth);
+    background: #1e293b;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
-/* Card Zoom & Lift Effect */
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(230, 126, 34, 0.08);
+    transform: translateY(-12px);
+    border-color: rgba(255, 153, 51, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 153, 51, 0.1);
 }
 
-/* Image Container Styling */
-.service-image {
+/* Image Wrapper */
+.service-image-wrapper {
     position: relative;
     height: 220px;
     width: 100%;
     overflow: hidden;
 }
 
-.service-image img {
+.service-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.service-card:hover .service-image img {
-    transform: scale(1.06);
+.service-card:hover .service-image-wrapper img {
+    transform: scale(1.1);
 }
 
-/* Repositioned Badge over Image */
+.image-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(30,41,59,0) 40%, rgba(30,41,59,0.85) 100%);
+    z-index: 1;
+}
+
+/* Floating Badge */
 .service-badge {
     position: absolute;
-    bottom: 15px;
+    top: 15px;
     right: 15px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--white);
-    background: var(--primary-gradient);
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 6px 14px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 2;
 }
 
-/* Content Details */
-.service-card-content {
+/* Card Body */
+.service-card-body {
     padding: 30px 25px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
 }
 
-.service-icon-title {
+.service-meta-row {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-.service-mini-icon {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    background: rgba(255, 153, 51, 0.08);
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
+.service-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 153, 51, 0.1);
+    color: #ff9933;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition-smooth);
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 153, 51, 0.2);
+    transition: all 0.3s ease;
 }
 
-.service-card:hover .service-mini-icon {
-    background: var(--primary-gradient);
-    color: var(--white);
+.service-card:hover .service-icon-box {
+    background: #ff9933;
+    color: #ffffff;
+    transform: rotate(-10deg) scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 153, 51, 0.5);
+}
+
+.service-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: -1px;
 }
 
 .service-title {
-    font-size: 1.25rem;
-    color: var(--dark-neutral);
-    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .service-text {
     font-size: 0.95rem;
-    color: var(--text-color);
-    line-height: 1.6;
+    color: #94a3b8;
+    line-height: 1.7;
     text-align: justify;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .service-text strong {
-    color: var(--dark-neutral);
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* Bottom Glow Accent */
+.card-footer-accent {
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, #ff9933, #e67e22);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+}
+
+.service-card:hover .card-footer-accent {
+    width: 100%;
 }
 
 /* Responsive Viewports Adjustment */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+    }
+    .services-header .section-heading {
+        font-size: 1.75rem;
     }
     .services-section {
-        padding: 70px 0;
+        padding: 80px 0;
     }
 }
 /* SERVICES SECTION STYLES END */
@@ -1298,234 +1386,125 @@ body {
 }
 /* Cow Welfare Section END */
 
-/* Team Members Section */
-.team-section {
-    padding: 120px 0;
-    background-color: #fcfdfd;
-    position: relative;
+/* Team Members Section START */
+.team-section { 
+    padding: 80px 20px; 
+    background: #fffdfa; 
+    color: #1e293b; 
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.team-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+.team-container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
-.team-header {
-    text-align: center;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Supreme Hero Card */
+.hero-card { 
+    background: linear-gradient(135deg, #ffffff, #fff7ed);
+    padding: 40px; 
+    border-radius: 40px; 
+    border: 2px solid #f59e0b;
+    text-align: center; 
+    max-width: 400px; 
+    margin: 0 auto 80px;
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1);
 }
 
-.team-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #ff9933;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 14px;
-    background: rgba(255, 153, 51, 0.08);
-    padding: 6px 18px;
-    border-radius: 50px;
+.hero-card img { 
+    width: 180px; 
+    height: 180px; 
+    border-radius: 50%; 
+    border: 4px solid #f59e0b; 
+    margin-bottom: 20px; 
+    object-fit: cover;
 }
 
-.team-heading {
-    font-size: 2.5rem;
-    color: #0f172a;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+/* Executive Cards Layout */
+.exec-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+    margin-bottom: 80px; 
 }
 
-.heading-underline {
-    width: 40px;
-    height: 3px;
-    background: #ff9933;
-    margin-top: 20px;
+.exec-list-card { 
+    display: flex; 
+    align-items: center; 
+    background: #ffffff; 
+    padding: 25px; 
+    border-radius: 25px; 
+    gap: 25px; 
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
 }
 
-/* Tier 1: Supreme Blessing (Maa Vindhyachal) - Elegant Organic Soft Shape */
-.supreme-tier {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
+.exec-list-card:hover { 
+    border-color: #f59e0b; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    transform: translateX(10px); 
 }
 
-.supreme-card {
-    max-width: 350px;
-    width: 100%;
-    text-align: center;
-    background: #ffffff;
-    border: 1px solid #f1f5f9;
-    padding: 20px;
-    border-radius: 32px;
-    box-shadow: 0 25px 60px rgba(255, 153, 51, 0.06);
+.exec-list-card img { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 20px; 
+    object-fit: cover; 
 }
 
-.supreme-card .card-image-wrapper {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    height: 380px;
-    /* Soft Fluid/Organic Shape cutting edge style */
-    clip-path: padding-box;
+.exec-info h3 { 
+    margin: 0 0 5px 0; 
+    color: #1e293b; 
+    font-size: 1.3rem; 
 }
 
-.supreme-card .team-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Pura face aur crown bina single pixel kate auto-adjust hoga */
-    background: #fffdf9;
+.exec-info p { 
+    color: #d97706; 
+    font-weight: 700; 
+    margin: 0 0 8px 0; 
+    font-size: 0.95rem; 
 }
 
-/* Tier 2: Core Executives - Soft Rounded-Arch Shape (No Face Cut) */
-.executive-tier {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    margin-bottom: 90px;
+.role-desc { 
+    color: #64748b; 
+    font-size: 0.9rem; 
+    line-height: 1.5; 
+    margin: 0; 
+    font-weight: normal; 
 }
 
-.exec-card {
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 16px;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    text-align: center;
+/* Members Grid Layout */
+.members-unique-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 15px; 
 }
 
-.exec-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+.member-tag { 
+    background: #ffffff; 
+    padding: 15px; 
+    border-radius: 12px; 
+    border: 1px solid #e2e8f0;
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+    transition: 0.3s;
 }
 
-.exec-card .card-image-wrapper {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background: #fafafa;
-    /* ARCH SHAPE: Upar se soft curve aur rounded jo bina crop kiye face landscape ko frame karta hai */
-    border-radius: 120px 120px 20px 20px; 
-    border: 1px solid #f1f5f9;
+.member-tag:hover {
+    border-color: #f59e0b;
 }
 
-.exec-card .team-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Cover ki jagah contain: isse photo block ke andar auto-adjust hogi aur side me stretch nahi hogi */
-    padding: 8px; /* Safe padding taaki aaspas ki background skin border se door rahe */
+.member-tag img { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
-.card-info h3 {
-    font-size: 1rem;
-    color: #0f172a;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.card-info .role {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #ff9933;
-    background: rgba(255, 153, 51, 0.05);
-    padding: 3px 12px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-/* Tier 3: Members Grid - Clean Rounded Hexagon Feel */
-.members-grid-title {
-    font-size: 1.4rem;
-    color: #334155;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.members-grid-title::before, .members-grid-title::after {
-    content: "";
-    width: 25px;
-    height: 1px;
-    background: #cbd5e1;
-}
-
-.members-grid-tier {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.member-mini-card {
-    text-align: center;
-    padding: 24px 16px;
-    border-radius: 24px;
-    background: #ffffff;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
-    transition: all 0.3s ease;
-}
-
-.member-mini-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
-    border-color: #e2e8f0;
-}
-
-.mini-img-wrapper {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 16px auto;
-    background: #fafafa;
-    /* SQUIRCLE SHAPE: Smooth Rounded Square jisme perfect area milta hai picture ko */
-    border-radius: 35%; 
-    overflow: hidden;
-    border: 2px solid #f1f5f9;
-    transition: all 0.3s ease;
-}
-
-.member-mini-card:hover .mini-img-wrapper {
-    border-radius: 50%; /* Hover par soft transition interactive circle me */
-    border-color: rgba(255, 153, 51, 0.3);
-}
-
-.member-mini-card .team-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Absolute solution for no face cut */
-    padding: 4px;
-}
-
-.member-mini-card h4 {
-    font-size: 0.95rem;
-    color: #0f172a;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.member-mini-card p {
-    font-size: 0.8rem;
-    color: #64748b;
-}
-
-/* Responsiveness */
-@media (max-width: 1024px) {
-    .members-grid-tier { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-    .members-grid-tier { grid-template-columns: repeat(2, 1fr); }
-    .executive-tier { grid-template-columns: repeat(2, 1fr); }
-    .team-heading { font-size: 1.8rem; }
-}
-@media (max-width: 480px) {
-    .members-grid-tier { grid-template-columns: 1fr; }
-    .executive-tier { grid-template-columns: 1fr; }
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .exec-list-card { flex-direction: column; text-align: center; }
+    .hero-card { padding: 20px; }
 }
 /* Team Members Section END */
