@@ -3,132 +3,603 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>गैलरी | श्री राघव ज्योति जन कल्याण ट्रस्ट</title>
+    <title>हमारे सेवा कार्य एवं लक्ष्य | श्री राघव ज्योति जन कल्याण ट्रस्ट</title>
     
-    <!-- Premium Icons & Fonts -->
+    <!-- Premium Icons Toolkit -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-orange: #ff9933;
-            --primary-glow: #ff5500;
-            --dark-slate: #0f172a;
-            --light-bg: #f8fafc;
-            --text-dark: #334155;
+            --brand-orange: #ff9933;
+            --brand-gold: #ffcc00;
+            --brand-glow-orange: rgba(255, 153, 51, 0.25);
+            --dark-slate: #0b1120;
+            --card-slate: #131c31;
+            --card-border: rgba(255, 153, 51, 0.18);
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
             --pure-white: #ffffff;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: hidden; }
-
-        /* NAVBAR (Wahi jo baaki pages pe hai) */
-        .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; z-index: 1000; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
-        .nav-logo-block { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo-block img { height: 50px; width: auto; }
-        .logo-title { font-size: 1.2rem; font-weight: 800; color: #0b132a; }
-        .logo-subtitle { font-size: 0.75rem; font-weight: 700; color: var(--primary-orange); letter-spacing: 1.5px; }
-
-        .nav-menu-desktop { display: flex; list-style: none; gap: 30px; }
-        .nav-menu-desktop a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
-        .nav-menu-desktop a.active { color: var(--primary-orange); }
-
-        .nav-actions { display: flex; align-items: center; gap: 20px; }
-        .btn-primary-glow { text-decoration: none; background: linear-gradient(135deg, #ff9933, #ff5500); color: #ffffff; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
-        
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
-
-        /* Mobile Menu */
-        .mobile-menu-wrapper { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #ffffff; flex-direction: column; padding: 20px; gap: 20px; text-align: center; border-bottom: 3px solid var(--primary-orange); box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 999; }
-        .mobile-menu-wrapper.active { display: flex; }
-
-        /* Gallery Page Styles */
-        .gallery-container { padding: 120px 24px 80px; max-width: 1200px; margin: 0 auto; }
-        .page-header { text-align: center; margin-bottom: 60px; }
-        .page-header h1 { font-size: 2.8rem; color: var(--dark-slate); margin-bottom: 10px; }
-        
-        .video-section { margin-bottom: 80px; }
-        .video-frame { width: 100%; height: 500px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        
-        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
-        .photo-item { height: 300px; border-radius: 20px; overflow: hidden; transition: 0.4s; }
-        .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-        .photo-item:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.15); }
-        .photo-item:hover img { transform: scale(1.05); }
-
-        @media (max-width: 992px) {
-            .navbar { padding: 0 30px; }
-            .nav-menu-desktop, .nav-actions { display: none; }
-            .hamburger { display: block; }
-            .video-frame { height: 300px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
         }
+
+        body {
+            background-color: var(--dark-slate);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* 3D PERSPECTIVE GLOBAL SETUP */
+        html {
+            perspective: 1000px;
+        }
+
+        /* NAVBAR START */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 17, 32, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 153, 51, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .nav-logo-block:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-logo-block img {
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--brand-orange);
+            box-shadow: 0 0 12px rgba(255, 153, 51, 0.4);
+        }
+
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--pure-white);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--brand-orange);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-orange);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--brand-orange) !important;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .btn-shivoham {
+            text-decoration: none;
+            color: var(--brand-gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+        .btn-shivoham:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary-glow {
+            text-decoration: none;
+            background: linear-gradient(135deg, #ff9933, #e67e22);
+            color: var(--pure-white);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-primary-glow:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(255, 153, 51, 0.6);
+        }
+        /* NAVBAR END */
+
+        /* GALLERY SECTION START */
+        .innovative-gallery-section {
+            padding: 160px 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient Background Glow */
+        .gallery-bg-glow {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(255, 153, 51, 0.08) 0%, rgba(11, 17, 32, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-tag {
+            background: rgba(255, 153, 51, 0.12);
+            color: var(--brand-orange);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 153, 51, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-header h1 {
+            color: var(--pure-white);
+            font-size: 2.2rem;
+            font-weight: 800;
+            max-width: 800px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .heading-glow-line {
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-orange), var(--brand-gold));
+            border-radius: 2px;
+            margin: 5px auto 18px auto;
+            box-shadow: 0 0 15px rgba(255, 153, 51, 0.6);
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Bento Grid Layout */
+        .bento-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 280px;
+            gap: 24px;
+        }
+
+        .span-col-2 { grid-column: span 2; }
+        .span-row-2 { grid-row: span 2; }
+
+        .bento-card {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            background: var(--card-slate);
+            border: 1px solid var(--card-border);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 153, 51, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 153, 51, 0.15);
+        }
+
+        .media-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .media-wrapper video,
+        .media-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .bento-card:hover .media-wrapper video,
+        .bento-card:hover .media-wrapper img {
+            transform: scale(1.07);
+        }
+
+        .media-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(11,17,32,0.15) 40%, rgba(11,17,32,0.9) 100%);
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .bento-card:hover .media-overlay {
+            background: linear-gradient(180deg, rgba(11,17,32,0.2) 20%, rgba(11,17,32,0.92) 100%);
+        }
+
+        /* Live Video Indicator Badge */
+        .live-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 153, 51, 0.25);
+            color: var(--pure-white);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 3;
+        }
+
+        .pulsing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            animation: pulse-red 1.6s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        .bento-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 22px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .bento-caption h3 {
+            color: var(--pure-white);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .bento-caption p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .item-icon-tag {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 153, 51, 0.2);
+            color: var(--brand-orange);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            border: 1px solid rgba(255, 153, 51, 0.35);
+        }
+
+        .floating-img-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 153, 51, 0.2);
+            padding: 10px 16px;
+            border-radius: 12px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .floating-img-badge span {
+            color: var(--pure-white);
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .navbar { padding: 15px 25px; }
+            .bento-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 250px;
+            }
+            .span-col-2 { grid-column: span 2; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions { display: none; }
+            .logo-title { font-size: 1.05rem; }
+            .bento-gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 260px;
+            }
+            .span-col-2, .span-row-2 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .innovative-gallery-section { padding: 120px 0 70px 0; }
+            .section-header h1 { font-size: 1.7rem; }
+        }
+        /* GALLERY SECTION END */
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="index.html" class="nav-logo-block">
-        <img src="img/logo.jpg" alt="Logo">
-        <div>
-            <span class="logo-title">श्री राघव ज्योति</span>
-            <span class="logo-subtitle">जन कल्याण ट्रस्ट</span>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-block">
+            <img src="img/logo.jpg" alt="श्री राघव ज्योति">
+            <div class="logo-text-wrapper">
+                <span class="logo-title">श्री राघव ज्योति</span>
+                <span class="logo-subtitle">जन कल्याण ट्रस्ट</span>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">मुख्य पृष्ठ</a></li>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="work.html">कार्य व पहल</a></li>
+            <li><a href="gallery.html" class="active">गैलरी</a></li>
+            <li><a href="contact.html">सम्पर्क करें</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+            <a href="index.html" class="btn-shivoham">|| शिवोहम् ||</a>
+            <a href="donation.html" class="btn-primary-glow">सहयोग करें (Donate)</a>
         </div>
-    </a>
-    <ul class="nav-menu-desktop">
-        <li><a href="index.html">मुख्य पृष्ठ</a></li>
-        <li><a href="about.html">हमारे बारे में</a></li>
-        <li><a href="work.html">कार्य व पहल</a></li>
-        <li><a href="gallery.html" class="active">गैलरी</a></li>
-        <li><a href="contact.html">सम्पर्क करें</a></li>
-    </ul>
-    <div class="nav-actions">
-        <a href="index.html#donate" class="btn-primary-glow">सहयोग करें (Donate)</a>
-    </div>
-    <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
-</nav>
+    </nav>
+    <!-- NAVBAR END -->
 
-<div class="mobile-menu-wrapper" id="mobile-menu">
-    <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
-        <li><a href="index.html">मुख्य पृष्ठ</a></li>
-        <li><a href="about.html">हमारे बारे में</a></li>
-        <li><a href="work.html">कार्य व पहल</a></li>
-        <li><a href="gallery.html">गैलरी</a></li>
-    </ul>
-</div>
+    <!-- GALLERY SECTION START -->
+    <section class="innovative-gallery-section">
+        <div class="gallery-bg-glow"></div>
 
-<main class="gallery-container">
-    <div class="page-header">
-        <h1>हमारी सेवा यात्रा</h1>
-        <p>ट्रस्ट द्वारा किए गए कार्यों की एक झलक</p>
-    </div>
+        <div class="gallery-container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <i class="fa-solid fa-photo-film"></i> हमारी झलकियाँ
+                </span>
+                <h1>सेवा कार्यों की जमीनी तस्वीरें और वीडियो</h1>
+                <div class="heading-glow-line"></div>
+                <p class="section-subtitle">प्रत्यक्ष रूप से किए जा रहे हमारे सेवा कार्यों के कुछ खास लम्हे</p>
+            </div>
 
-    <!-- Video Area -->
-    <section class="video-section">
-        <div class="video-frame">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <!-- Modern Bento Mixed Grid -->
+            <div class="bento-gallery-grid">
+                
+                <!-- Video Item 1 -->
+                <div class="bento-card span-col-2 span-row-2">
+                    <div class="media-wrapper">
+                        <video src="vid/park.mp4" autoplay muted loop playsinline></video>
+                        <div class="media-overlay"></div>
+                        <div class="live-badge">
+                            <span class="pulsing-dot"></span> लाइव वीडियो
+                        </div>
+                        <div class="bento-caption">
+                            <div class="item-icon-tag"><i class="fa-solid fa-video"></i></div>
+                            <h3>जनेश्वर मिश्र पार्क बैठक: एक विस्तृत झलक</h3>
+                            <p>संस्था के भविष्य के संकल्पों और जन-कल्याण कार्यों को नई दिशा देने के लिए यह एक सार्थक संवाद रहा।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Item 1 -->
+                <div class="bento-card">
+                    <div class="media-wrapper">
+                        <img src="img/gau seva.jpeg" alt="Gramin Jal Vitran Seva" loading="lazy">
+                        <div class="media-overlay"></div>
+                        <div class="floating-img-badge">
+                            <span>गौ सेवा महाअभियान</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--brand-orange); font-size: 0.8rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Item 2 -->
+                <div class="bento-card">
+                    <div class="media-wrapper">
+                        <img src="img/bhraman.jpeg" alt="Bhojan Vitran Service" loading="lazy">
+                        <div class="media-overlay"></div>
+                        <div class="floating-img-badge">
+                            <span>जनसंपर्क एवं क्षेत्र भ्रमण</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--brand-orange); font-size: 0.8rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="bento-card">
+                    <div class="media-wrapper">
+                        <video src="vid/cow1.mp4" autoplay muted loop playsinline></video>
+                        <div class="media-overlay"></div>
+                        <div class="live-badge">
+                            <span class="pulsing-dot"></span> क्लिप
+                        </div>
+                        <div class="bento-caption" style="padding: 20px;">
+                            <h3 style="font-size: 1.05rem;">गौ सेवा में श्री राघव ज्योति जनकल्याण ट्रस्ट का योगदान</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Item 3 -->
+                <div class="bento-card span-col-2">
+                    <div class="media-wrapper">
+                        <img src="img/mndir bhr.jpeg" alt="Temple Sharbat Seva" loading="lazy">
+                        <div class="media-overlay"></div>
+                        <div class="floating-img-badge">
+                            <span>मंदिर प्रांगण में जन-सहयोग एवं विमर्श</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--brand-orange); font-size: 0.8rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 3 -->
+                <div class="bento-card">
+                    <div class="media-wrapper">
+                        <video src="videos/video3.mp4" autoplay muted loop playsinline></video>
+                        <div class="media-overlay"></div>
+                        <div class="live-badge">
+                            <span class="pulsing-dot"></span> क्लिप
+                        </div>
+                        <div class="bento-caption" style="padding: 20px;">
+                            <h3 style="font-size: 1.05rem;">सहायता कार्य</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
+    <!-- GALLERY SECTION END -->
 
-    <!-- Photo Area -->
-    <section class="photo-grid">
-        <div class="photo-item"><img src="img/1.jpg" alt="Gallery"></div>
-        <div class="photo-item"><img src="img/2.jpg" alt="Gallery"></div>
-        <div class="photo-item"><img src="img/3.jpg" alt="Gallery"></div>
-        <div class="photo-item"><img src="img/4.jpg" alt="Gallery"></div>
-        <div class="photo-item"><img src="img/5.jpg" alt="Gallery"></div>
-        <div class="photo-item"><img src="img/6.jpg" alt="Gallery"></div>
-    </section>
-</main>
+    <script>
+        // Advanced Video Handling & Fullscreen Toggle on Click
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadeddata', () => {
+                video.play().catch(error => {
+                    console.log("Auto-play prevented by browser policy:", error);
+                });
+            });
 
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        hamburger.querySelector('i').classList.toggle('fa-bars');
-        hamburger.querySelector('i').classList.toggle('fa-xmark');
-    });
-</script>
+            video.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
