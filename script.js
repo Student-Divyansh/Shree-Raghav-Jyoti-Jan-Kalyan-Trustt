@@ -169,15 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            const icon = card.querySelector('.service-mini-icon i');
+            const icon = card.querySelector('.service-icon-box i');
             if (icon) {
-                icon.style.transform = 'scale(1.2)';
-                icon.style.transition = 'transform 0.2s ease';
+                icon.style.transform = 'scale(1.15)';
+                icon.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             }
         });
         
         card.addEventListener('mouseleave', () => {
-            const icon = card.querySelector('.service-mini-icon i');
+            const icon = card.querySelector('.service-icon-box i');
             if (icon) {
                 icon.style.transform = 'scale(1)';
             }
